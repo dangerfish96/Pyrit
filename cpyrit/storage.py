@@ -126,6 +126,8 @@ def getStorage(url):
         return FSStorage(url)
     elif protocol == 'http':
         return RPCStorage(url)
+    elif protocol == 'https':
+        return RPCStorage(url)
     elif protocol in ('sqlite', 'mysql', 'postgres', 'postgresql', \
                       'oracle', 'mssql', 'firebird'):
         if 'sqlalchemy' not in sys.modules:
